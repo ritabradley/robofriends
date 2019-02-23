@@ -1,3 +1,3 @@
-# RoboFriends
+# CuteCatFriends
 
-Use this handy tool to look for your robot friends by their name. Happy hunting!
+Use this handy tool to look for your cat friends by their name. Happy hunting!
