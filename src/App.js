@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import './App.css';
-import { cats } from './cats';
 
 export class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cats,
+      cats: [],
       searchField: '',
     };
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => this.setState({ cats: users }));
   }
 
   onSearchChange = e => {
@@ -26,13 +31,17 @@ export class App extends Component {
         .toLowerCase()
         .includes(this.state.searchField.toLowerCase());
     });
-    return (
-      <div className='tc'>
-        <h1 className='f1'>CuteCatFriends</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <CardList cats={filteredCats} />
-      </div>
-    );
+    if (this.state.cats.length === 0) {
+      return <h3>Loading...</h3>;
+    } else {
+      return (
+        <div className='tc'>
+          <h1 className='f1'>CuteCatFriends</h1>
+          <SearchBox searchChange={this.onSearchChange} />
+          <CardList cats={filteredCats} />
+        </div>
+      );
+    }
   }
 }
 
