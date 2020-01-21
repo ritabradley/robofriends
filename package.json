@@ -1,14 +1,8 @@
 {
-    "name": "robofriends",
-    "version": "0.1.0",
+    "name": "monsterfriends",
+    "version": "1.0.0",
     "private": true,
-    "homepage": "http://ritabradley.github.io/cute-cat-friends",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ritabradley/cute-cat-friends.git"
-    },
     "dependencies": {
-        "gh-pages": "^2.2.0",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "react-scripts": "^3.3.0"
@@ -28,7 +22,5 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "devDependencies": {
-        "tachyons": "^4.11.1"
-    }
+    "devDependencies": {}
 }
