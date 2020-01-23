@@ -9891,6 +9891,189 @@ video {
   z-index: auto;
 }
 
+.scale-0 {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.scale-25 {
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+}
+
+.scale-50 {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.scale-75 {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.scale-100 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.scale-110 {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.hover\:scale-0:hover {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.hover\:scale-25:hover {
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+}
+
+.hover\:scale-50:hover {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.hover\:scale-75:hover {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.hover\:scale-100:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.hover\:scale-110:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* base styles for the default transition duration, timing function, and delay (when they differ from the CSS defaults) */
+
+*,
+*::before,
+*::after {
+  --transition-duration: 250ms;
+  /* when the default timing function is a value other than "ease": */
+  --transition-timing-function: 'ease-in-out';
+  /* when the default delay is a value other than zero: */
+  --transition-delay: 0ms;
+}
+
+/* configurable with the "transitionProperty" theme object */
+
+.transition-none {
+  -webkit-transition-property: none;
+  transition-property: none;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-all {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-transform {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  /* when the default duration is a value other than zero: */
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+  /* when the default timing function is a value other than "ease": */
+  -webkit-transition-timing-function: var(--transition-timing-function);
+          transition-timing-function: var(--transition-timing-function);
+  -webkit-transition-delay: var(--transition-delay);
+          transition-delay: var(--transition-delay);
+}
+
+/* configurable with the "transitionDuration" theme object */
+
+.transition-0 {
+  --transition-duration: 0ms;
+  -webkit-transition-duration: 0ms;
+          transition-duration: 0ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-100 {
+  --transition-duration: 100ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+.transition-250 {
+  --transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+/* configurable with the "transitionTimingFunction" theme object */
+
+.transition-linear {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.transition-ease {
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.transition-ease-in-out {
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  /* when the default timing function is a value other than "ease": */
+  --transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: var(--transition-timing-function);
+          transition-timing-function: var(--transition-timing-function);
+}
+
+/* configurable with the "transitionDelay" theme object */
+
+.transition-delay-0 {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.transition-delay-100 {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.transition-delay-250 {
+  -webkit-transition-delay: 250ms;
+          transition-delay: 250ms;
+  /* when the default delay is a value other than zero: */
+  --transition-delay: 250ms;
+  -webkit-transition-delay: var(--transition-delay);
+          transition-delay: var(--transition-delay);
+}
+
+/* configurable with the "willChange" theme object */
+
+.will-change {
+  will-change: contents;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+.will-change-[key] {
+  will-change: [value];
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

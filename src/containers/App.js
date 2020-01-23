@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CardList from '../components/CardList';
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
 class App extends Component {
@@ -7,33 +7,22 @@ class App extends Component {
         super();
 
         this.state = {
-            monsters: []
+            cats: []
         };
     }
 
     componentDidMount() {
         fetch(URL)
             .then(res => res.json())
-            .then(users => this.setState({ monsters: users }))
+            .then(users => this.setState({ cats: users }))
             .catch(err => console.log(`Something went wrong: ${err}`));
     }
 
     render() {
+        const { cats } = this.state;
         return (
-            <div className='App container mx-auto font-sans'>
-                <ul className='text-center font-bold text-lg text-gray-700 list-none'>
-                    {this.state.monsters.map((monster, i) =>
-                        i % 2 === 0 ? (
-                            <li key={monster.name} className='border border-gray-300'>
-                                {monster.name}
-                            </li>
-                        ) : (
-                            <li key={monster.name} className='border border-gray-300 bg-teal-100'>
-                                {monster.name}
-                            </li>
-                        )
-                    )}
-                </ul>
+            <div className='App container mx-auto px-4 font-sans'>
+                <CardList cats={cats}></CardList>
             </div>
         );
     }
