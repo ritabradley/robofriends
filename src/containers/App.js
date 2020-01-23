@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
 class App extends Component {
@@ -20,9 +21,10 @@ class App extends Component {
     }
 
     render() {
-        const { cats } = this.state;
+        const { cats, searchField } = this.state;
         return (
             <div className='App container mx-auto px-4 font-sans'>
+                <SearchBox searchField={searchField} />
                 <CardList cats={cats}></CardList>
             </div>
         );
