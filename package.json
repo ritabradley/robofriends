@@ -10,7 +10,7 @@
         "tailwindcss-transitions": "^2.1.0"
     },
     "scripts": {
-        "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
+        "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css --watch",
         "start": "npm run build:style && react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",

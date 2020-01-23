@@ -9891,6 +9891,20 @@ video {
   z-index: auto;
 }
 
+.bg-gradient {
+  background: linear-gradient(
+        110deg,
+        #ffd9e8 4%,
+        #ffd9e8 40%,
+        #de95ba calc(40% + 1px),
+        #de95ba 50%,
+        #7f4a88 calc(50% + 1px),
+        #7f4a88 70%,
+        #4a266a calc(70% + 1px),
+        #4a266a 100%
+    );
+}
+
 .scale-0 {
   -webkit-transform: scale(0);
           transform: scale(0);
