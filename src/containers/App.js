@@ -20,14 +20,27 @@ class App extends Component {
             .catch(err => console.log(`Something went wrong: ${err}`));
     }
 
+    onValueChange = e => {
+        this.setState({
+            searchField: e.target.value
+        });
+    };
+
     render() {
         const { cats, searchField } = this.state;
-        return (
-            <div className='App container mx-auto px-4 font-sans'>
-                <SearchBox searchField={searchField} />
-                <CardList cats={cats}></CardList>
-            </div>
-        );
+        const filteredCats = cats.filter(cat => cat.name.toLowerCase().includes(searchField.toLowerCase()));
+
+        if (cats.length === 0) {
+            return <h3 className='text-center text-2xl text-gray-600'>Loading cats...</h3>;
+        } else {
+            return (
+                <div className='App container mx-auto px-4 font-sans'>
+                    <h1 className='text-center text-4xl text-white font-bold'>Cute Cat Friends</h1>
+                    <SearchBox searchField={this.onValueChange} />
+                    <CardList cats={filteredCats}></CardList>
+                </div>
+            );
+        }
     }
 }
 

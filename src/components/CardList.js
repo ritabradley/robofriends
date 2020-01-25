@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = props => {
+const CardList = ({ cats }) => {
     return (
         <div>
             <div className='flex flex-wrap -mx-4 overflow-hidden'>
-                {props.cats.map(cat => (
+                {cats.map(cat => (
                     <Card key={cat.id} cat={cat} />
                 ))}
             </div>
