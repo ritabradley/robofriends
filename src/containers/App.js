@@ -20,12 +20,6 @@ class App extends Component {
             .catch(err => console.log(`Something went wrong: ${err}`));
     }
 
-    onValueChange = e => {
-        this.setState({
-            searchField: e.target.value
-        });
-    };
-
     render() {
         const { cats, searchField } = this.state;
         const filteredCats = cats.filter(cat => cat.name.toLowerCase().includes(searchField.toLowerCase()));
@@ -35,8 +29,15 @@ class App extends Component {
         } else {
             return (
                 <div className='App container mx-auto px-4 font-sans'>
-                    <h1 className='text-center text-4xl text-white font-bold'>Cute Cat Friends</h1>
-                    <SearchBox searchField={this.onValueChange} />
+                    <h1 className='text-center text-4xl text-white font-bold header-font'>Cute Cat Friends</h1>
+                    <SearchBox
+                        searchField={e => {
+                            this.setState({
+                                searchField: e.target.value
+                            });
+                        }}
+                        placeholder='Search for friends'
+                    />
                     <CardList cats={filteredCats}></CardList>
                 </div>
             );

@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
+
+.header-font {
+    font-family: 'Bangers';
+    letter-spacing: 0.2em;
+}
 
 .bg-gradient {
     background: linear-gradient(
