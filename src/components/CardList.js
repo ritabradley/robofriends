@@ -2,15 +2,15 @@ import React from 'react';
 import Card from './Card';
 
 const CardList = ({ cats }) => {
-  return (
-    <div>
-      {cats.map(cat => {
-        return (
-          <Card key={cat.id} id={cat.id} name={cat.name} email={cat.email} />
-        );
-      })}
-    </div>
-  );
+    return (
+        <div>
+            <div className='flex flex-wrap -mx-4 overflow-hidden'>
+                {cats.map(cat => (
+                    <Card key={cat.id} cat={cat} />
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default CardList;

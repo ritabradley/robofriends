@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.header-font {
+    font-family: 'Bangers';
+    letter-spacing: 0.2em;
+}
+
+.bg-gradient {
+    background: linear-gradient(
+        110deg,
+        #ffd9e8 4%,
+        #ffd9e8 40%,
+        #de95ba calc(40% + 1px),
+        #de95ba 50%,
+        #7f4a88 calc(50% + 1px),
+        #7f4a88 70%,
+        #4a266a calc(70% + 1px),
+        #4a266a 100%
+    );
+}
+
+@variants hover {
+    .scale-0 {
+        transform: scale(0);
+    }
+
+    .scale-25 {
+        transform: scale(0.25);
+    }
+
+    .scale-50 {
+        transform: scale(0.5);
+    }
+
+    .scale-75 {
+        transform: scale(0.75);
+    }
+
+    .scale-100 {
+        transform: scale(1);
+    }
+
+    .scale-110 {
+        transform: scale(1.1);
+    }
+}
+
+/* base styles for the default transition duration, timing function, and delay (when they differ from the CSS defaults) */
+*,
+*::before,
+*::after {
+    --transition-duration: 250ms;
+    /* when the default timing function is a value other than "ease": */
+    --transition-timing-function: 'ease-in-out';
+    /* when the default delay is a value other than zero: */
+    --transition-delay: 0ms;
+}
+
+/* configurable with the "transitionProperty" theme object */
+.transition-none {
+    transition-property: none;
+    transition-duration: var(--transition-duration);
+}
+.transition-all {
+    transition-property: all;
+    transition-duration: var(--transition-duration);
+}
+
+.transition-transform {
+    transition-property: transform;
+    /* when the default duration is a value other than zero: */
+    transition-duration: var(--transition-duration);
+    /* when the default timing function is a value other than "ease": */
+    transition-timing-function: var(--transition-timing-function);
+    transition-delay: var(--transition-delay);
+}
+
+/* configurable with the "transitionDuration" theme object */
+.transition-0 {
+    --transition-duration: 0ms;
+    transition-duration: 0ms;
+    transition-duration: var(--transition-duration);
+}
+.transition-100 {
+    --transition-duration: 100ms;
+    transition-duration: var(--transition-duration);
+}
+.transition-250 {
+    --transition-duration: 250ms;
+    transition-duration: 250ms;
+    transition-duration: var(--transition-duration);
+}
+
+/* configurable with the "transitionTimingFunction" theme object */
+.transition-linear {
+    transition-timing-function: linear;
+}
+.transition-ease {
+    transition-timing-function: ease;
+}
+.transition-ease-in-out {
+    transition-timing-function: ease-in-out;
+    /* when the default timing function is a value other than "ease": */
+    --transition-timing-function: ease-in-out;
+    transition-timing-function: var(--transition-timing-function);
+}
+
+/* configurable with the "transitionDelay" theme object */
+.transition-delay-0 {
+    transition-delay: 0ms;
+}
+.transition-delay-100 {
+    transition-delay: 100ms;
+}
+.transition-delay-250 {
+    transition-delay: 250ms;
+    /* when the default delay is a value other than zero: */
+    --transition-delay: 250ms;
+    transition-delay: var(--transition-delay);
+}
+
+/* configurable with the "willChange" theme object */
+.will-change {
+    will-change: contents;
+}
+.will-change-auto {
+    will-change: auto;
+}
+.will-change-[key] {
+    will-change: [value];
+}

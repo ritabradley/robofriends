@@ -1,16 +1,16 @@
 import React from 'react';
 
-const SearchBox = ({ searchField, searchChange }) => {
-  return (
-    <div className='pa2'>
-      <input
-        onChange={searchChange}
-        className='pa3 ba br3 b--purple bg-near-white input-reset'
-        type='search'
-        placeholder='search cats'
-      />
-    </div>
-  );
+const SearchBox = ({ searchField, placeholder }) => {
+    return (
+        <div className='text-center mt-6 mb-2'>
+            <input
+                onChange={searchField}
+                className='w-full md:w-1/2 lg:w-1/3 placeholder-gray-500 px-2 py-3 rounded border shadow'
+                type='search'
+                placeholder={placeholder}
+            />
+        </div>
+    );
 };
 
 export default SearchBox;

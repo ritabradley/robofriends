@@ -1,9 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './index.css';
+import './styles/tailwind.css';
 import App from '../src/containers/App';
 import * as serviceWorker from './serviceWorker';
-import 'tachyons';
 
 render(<App />, document.getElementById('root'));
 
